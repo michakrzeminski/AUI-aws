@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "patryk",
+      "name": "Patryk Bak",
+      "bio": "WUT Student, Java Software Developer"
+    },
+    {
+      "id": 2,
+      "username": "marek",
+      "name": "Marek Pelka",
+      "bio": "WUT Student, DevOps"
+    },
+    {
+      "id": 3,
+      "username": "grzegorz",
+      "name": "Grzegorz Przytula",
+      "bio": "WUT Student, DevOps"
+    },
+    {
+      "id": 4,
+      "username": "michael",
+      "name": "Jake the Dog",
+      "bio": "WUT Student, Android Software Developer"
+    }
+  ]
+}
