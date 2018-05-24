@@ -1,9 +1,13 @@
 {
   "dependencies": {
+    "chai": "^4.1.2",
     "koa": "^1.2.5",
-    "koa-router": "^5.4.0"
+    "koa-router": "^5.4.0",
+    "mocha": "^5.2.0",
+    "request": "^2.87.0"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node app/server.js",
+    "test": "./node_modules/.bin/mocha --reporter spec"
   }
 }
