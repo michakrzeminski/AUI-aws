@@ -5,7 +5,7 @@ describe("Color Code Converter API", function() {
 
   describe("Main page", function() {
 
-    var url = "http://localhost:3000/";
+    var url = "http://dp9grg7o4cfej.cloudfront.net/";
 
     it("returns status 200", function(done) {
       request(url, function(error, response, body) {
@@ -24,7 +24,7 @@ describe("Color Code Converter API", function() {
   });
 
   describe("Get all users", function() {
-    var url = "http://localhost:3000/users";
+    var url = "http://dp9grg7o4cfej.cloudfront.net/users";
 
     it("returns status 200", function(done) {
       request(url, function(error, response, body) {
