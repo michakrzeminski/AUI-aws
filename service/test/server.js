@@ -1,11 +1,11 @@
 var expect  = require("chai").expect;
 var request = require("request");
 
-describe("Color Code Converter API", function() {
+describe("Test microJS service", function() {
 
-  describe("Main page", function() {
+  describe("Get one user", function() {
 
-    var url = "http://dp9grg7o4cfej.cloudfront.net/";
+    var url = "http://dp9grg7o4cfej.cloudfront.net/users/3";
 
     it("returns status 200", function(done) {
       request(url, function(error, response, body) {
@@ -16,7 +16,7 @@ describe("Color Code Converter API", function() {
 
     it("returns the correct string", function(done) {
       request(url, function(error, response, body) {
-        expect(body).to.equal("Ready to receive requests");
+        expect(body).to.equal(JSON.stringify({"id":3,"username":"grzegorz","name":"Grzegorz Przytula","bio":"WUT Student, DevOps"}));
         done();
       });
     });
