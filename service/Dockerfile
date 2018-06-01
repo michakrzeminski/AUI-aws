@@ -1,13 +1,7 @@
-FROM node:0.10
+FROM mhart/alpine-node:7.10.1
 
-ENV user micro
-RUN groupadd --system $user 
-RUN useradd --system --create-home --gid $user $user
-
-COPY . /home/$user/
-WORKDIR /home/$user
-RUN chown $user --recursive .
-USER $user
+WORKDIR /srv
+ADD . .
 RUN npm install
 
 EXPOSE 3000
