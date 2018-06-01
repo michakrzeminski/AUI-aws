@@ -1,30 +1,21 @@
-const app = require('koa')();
-const router = require('koa-router')();
+var express = require('express')
+var cors = require('cors')
+var app = express()
 const db = require('./db.json');
+app.use(cors())
 
-// Log requests
-app.use(function *(next){
-  const start = new Date;
-  yield next;
-  const ms = new Date - start;
-  console.log('%s %s - %s', this.method, this.url, ms);
+app.get('/users', function (req, res, next) {
+  res.json({msg: db.users})
 });
 
-router.get('/users', function *(next) {
-  this.body = db.users;
+app.get('/users/:userId', function (req, res, next) {
+  const id = parseInt(req.params.userId);
+  res.json({msg: db.users.find((user) => user.id == id)})
 });
 
-router.get('/users/:userId', function *(next) {
-  const id = parseInt(this.params.userId);
-  this.body = db.users.find((user) => user.id == id);
+app.get('/', function (req, res, next) {
+  res.json({msg: 'Ready to receive requests'});
 });
-
-router.get('/', function *() {
-  this.body = "Ready to receive requests";
-});
-
-app.use(router.routes());
-app.use(router.allowedMethods());
 
 app.listen(3000);
 
