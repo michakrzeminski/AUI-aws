@@ -8,10 +8,7 @@ pipeline {
   stages {
     stage('Setup') {
       steps {
-        sh '''
-
-cd service
-npm install'''
+        sh 'echo \'Hello\''
       }
     }
     stage('run') {
